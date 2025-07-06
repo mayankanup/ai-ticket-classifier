@@ -1,7 +1,31 @@
+import {db} from '../db/database.js';
+
+function saveTicket({ title, description, category, priority }) {
+  const stmt = db.prepare(`
+    INSERT INTO tickets (title, description, category, priority)
+    VALUES (?, ?, ?, ?)
+  `);
+  const info = stmt.run(title, description, category, priority);
+
+  return {
+    id: info.lastInsertRowid,
+    title,
+    description,
+    category,
+    priority,
+    createdAt: new Date().toISOString()
+  };
+}
+
+function getTickets() {
+  const stmt = db.prepare('SELECT * FROM tickets ORDER BY createdAt DESC');
+  return stmt.all();
+}
+
 let tickets = [];
 let nextId = 1;
 
-function saveTicket({ title, description, category, priority }) {
+function saveTicketInMemory({ title, description, category, priority }) {
   const ticket = {
     id: nextId++,
     title,
