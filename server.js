@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+process.env.HF_HOME = './hf-cache'; // Cache HuggingFace files locally
 console.log("OPENAI_API_KEY is", process.env.OPENAI_API_KEY ? "set ✅" : "missing ❌");
 
 import express from 'express';

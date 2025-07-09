@@ -41,3 +41,17 @@ Automatically classify support tickets by **category** and **priority** using Op
 ```bash
 git clone https://github.com/your-username/ai-ticket-classifier.git
 cd ai-ticket-classifier
+
+### 2. Install the dependencies
+
+npm install
+
+###3. Start the node server
+nmp run dev
+
+###4. Send a ticket creation request via POST
+http://localhost:3000/api/tickets
+{
+  "title": "Can't log in to my account",
+  "description": "I reset my password but it still doesn't work."
+}
