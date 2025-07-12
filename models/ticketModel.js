@@ -17,7 +17,7 @@ function saveTicket({ title, description, category, priority }) {
   };
 }
 
-function getTickets() {
+function getAllTickets() {
   const stmt = db.prepare('SELECT * FROM tickets ORDER BY createdAt DESC');
   return stmt.all();
 }
@@ -38,4 +38,4 @@ function saveTicketInMemory({ title, description, category, priority }) {
   return ticket;
 }
 
-export { saveTicket };
+export { saveTicket, getAllTickets };
