@@ -41,33 +41,37 @@ Automatically classify support tickets by **category** and **priority** using Op
 ```bash
 git clone https://github.com/your-username/ai-ticket-classifier.git
 cd ai-ticket-classifier
-
+```
 ### 2. Install the dependencies
-
+```bash
 npm install
-
-###3. Start the node server
+```
+### 3. Start the node server
 nmp run dev
 
-###4. Send a ticket creation request via POST
+### 4. Send a ticket creation request via POST
 http://localhost:3000/api/tickets
 {
   "title": "Can't log in to my account",
   "description": "I reset my password but it still doesn't work."
 }
 
-###5. View tickets
+### 5. View tickets
 GET http://localhost:3000/api/tickets
 
-Running Accessing User Interface of AI-Ticket-Classifier
+## Running Accessing User Interface of AI-Ticket-Classifier
 
-1. Ensure that backend API to post tickets is running as per above steps
+### 1. Ensure that backend API to post tickets is running as per above steps
 
-2. cd ai-ticket-ui
-
-3. npm install
-
-4. Start the Vite Dev Server
+### 2. Enter UI folder
+```bash
+cd ai-ticket-ui
+```
+### 3. Install dependencies
+```bash
+npm install
+```
+### 4. Start the Vite Dev Server
    npm run dev
 
 You shall see something like
@@ -76,5 +80,5 @@ VITE v4.x.x  ready in 300ms
 ➜  Local:   http://localhost:5173/
 ➜  Network: http://192.168.x.x:5173/
 
-5. Open URL in browser
+### 5. Open URL in browser
 👉 http://localhost:5173
