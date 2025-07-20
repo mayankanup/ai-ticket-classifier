@@ -38,4 +38,9 @@ function saveTicketInMemory({ title, description, category, priority }) {
   return ticket;
 }
 
-export { saveTicket, getAllTickets };
+function deleteTicket(id) {
+  const stmt = db.prepare('DELETE FROM tickets WHERE id = ?');
+  return stmt.run(id); // returns { changes: 1 } if deleted
+}
+
+export { saveTicket, getAllTickets, deleteTicket };
